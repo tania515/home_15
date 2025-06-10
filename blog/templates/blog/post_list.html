@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Блог - Список записей </title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .post {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .post-title {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .post-date {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .no-posts {
+            color: #888;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Последние записи блога</h1>
+
+    {% if posts %}
+        {% for post in posts %}
+            <div class="post">
+                <h2 class="post-title">{{ post.title }}</h2>
+                <div class="post-date">
+                    Опубликовано: {{ post.created_at|date:"d.m.Y в H:i" }}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="no-posts">Пока нет ни одной записи.</p>
+    {% endif %}
+</body>
+</html>
