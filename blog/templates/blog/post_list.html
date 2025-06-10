@@ -38,7 +38,7 @@
             <div class="post">
                 <h2 class="post-title">{{ post.title }}</h2>
                 <div class="post-date">
-                    Опубликовано: {{ post.created_at|date:"d.m.Y в H:i" }}
+                    Опубликовано: {{ post.create_at|date:"d.m.Y в H:i" }}
                 </div>
             </div>
         {% endfor %}
